@@ -6,8 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = Function.name)
 data class Function(
-    @ColumnInfo(name = Columns.name)
-    val name: String,
+    @ColumnInfo(name = Columns.label) val label: String,
 ) : BaseEntity() {
     @ColumnInfo(name = Columns.id)
     @PrimaryKey(autoGenerate = true)
@@ -21,7 +20,7 @@ data class Function(
     class Columns {
         companion object {
             const val id = BaseEntity.Columns.id
-            const val name = "name"
+            const val label = "label"
         }
     }
 }
