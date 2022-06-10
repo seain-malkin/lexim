@@ -6,11 +6,13 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [],
+    entities = [Headword::class],
     version = 1,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun headwordDao(): HeadwordDao
 
     companion object {
         private var DATABASE_NAME = "Lexim_Data"
