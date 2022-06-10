@@ -10,10 +10,11 @@ import androidx.room.RoomDatabase
         Headword::class,
         Entry::class,
         Function::class,
-        Label::class
+        Label::class,
+        Pronunciation::class,
     ],
     version = 1,
-    exportSchema = false
+    exportSchema = false,
 )
 abstract class AppDatabase : RoomDatabase() {
 
@@ -21,6 +22,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun entryDao(): EntryDao
     abstract fun functionDao(): FunctionDao
     abstract fun labelDao(): LabelDao
+    abstract fun pronunciationDao(): PronunciationDao
 
     companion object {
         private var DATABASE_NAME = "Lexim_Data"
