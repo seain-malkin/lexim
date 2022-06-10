@@ -9,7 +9,8 @@ import androidx.room.RoomDatabase
     entities = [
         Headword::class,
         Entry::class,
-        Function::class
+        Function::class,
+        Label::class
     ],
     version = 1,
     exportSchema = false
@@ -19,6 +20,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun headwordDao(): HeadwordDao
     abstract fun entryDao(): EntryDao
     abstract fun functionDao(): FunctionDao
+    abstract fun labelDao(): LabelDao
 
     companion object {
         private var DATABASE_NAME = "Lexim_Data"
