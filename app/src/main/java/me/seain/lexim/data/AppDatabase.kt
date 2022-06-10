@@ -6,17 +6,24 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [Headword::class],
+    entities = [
+        Headword::class,
+        Entry::class,
+        Function::class
+    ],
     version = 1,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun headwordDao(): HeadwordDao
+    abstract fun entryDao(): EntryDao
+    abstract fun functionDao(): FunctionDao
 
     companion object {
         private var DATABASE_NAME = "Lexim_Data"
-        @Volatile private var instance: AppDatabase? = null
+        @Volatile
+        private var instance: AppDatabase? = null
 
         fun getInstance(context: Context): AppDatabase {
             return instance ?: synchronized(this) {
