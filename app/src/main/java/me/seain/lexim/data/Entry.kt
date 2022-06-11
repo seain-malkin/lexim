@@ -2,9 +2,24 @@ package me.seain.lexim.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = Entry.name)
+@Entity(
+    tableName = Entry.name,
+    foreignKeys = [
+        ForeignKey(
+            entity = Headword::class,
+            parentColumns = [Headword.Columns.id],
+            childColumns = [Entry.Columns.headwordId],
+        ),
+        ForeignKey(
+            entity = Function::class,
+            parentColumns = [Function.Columns.id],
+            childColumns = [Entry.Columns.functionId],
+        ),
+    ],
+)
 data class Entry(
     @ColumnInfo(name = Columns.headwordId)
     val headwordId: Long,

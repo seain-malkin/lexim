@@ -13,7 +13,7 @@ import androidx.room.RoomDatabase
         Label::class,
         Pronunciation::class,
     ],
-    version = 1,
+    version = 27,
     exportSchema = false,
 )
 abstract class AppDatabase : RoomDatabase() {
