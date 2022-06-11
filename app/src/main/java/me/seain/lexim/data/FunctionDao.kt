@@ -16,7 +16,7 @@ abstract class FunctionDao : BaseDao<Function>(Function.name) {
      */
     suspend fun findByLabel(label: String): Function? {
         return getOne(SimpleSQLiteQuery(
-            "SELECT * FROM ${Function.name} WHERE ${Function.Columns.label} = $label")
+            "SELECT * FROM ${Function.name} WHERE ${Function.Columns.label} = \"$label\"")
         )
     }
 }
