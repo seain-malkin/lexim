@@ -4,12 +4,14 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = SenseGroup.name)
-data class SenseGroup(
+@Entity(tableName = SenseNode.name)
+data class SenseNode(
     @ColumnInfo(name = Columns.entryId)
     val entryId: Long,
-    @ColumnInfo(name = Columns.binding)
-    val binding: Boolean
+    @ColumnInfo(name = Columns.senseId)
+    val senseId: Long? = null,
+    @ColumnInfo(name = Columns.parentId)
+    val parentId: Long? = null,
 ) : BaseEntity() {
 
     @ColumnInfo(name = Columns.id)
@@ -17,15 +19,16 @@ data class SenseGroup(
     override var id: Long = 0
 
     companion object {
-        const val name = "sense_group"
-        const val foreignKey = "sense_group_id"
+        const val name = "sense_node"
+        const val foreignKey = "sense_node_id"
     }
 
     class Columns {
         companion object {
             const val id = BaseEntity.Columns.id
             const val entryId = Entry.foreignKey
-            const val binding = "binding"
+            const val senseId = Sense.foreignKey
+            const val parentId = foreignKey
         }
     }
 }
