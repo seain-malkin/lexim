@@ -6,7 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = Function.name)
 data class Function(
-    @ColumnInfo(name = Columns.label) val label: String,
+    @ColumnInfo(name = Columns.label)
+    val label: String,
 ) : BaseEntity() {
     @ColumnInfo(name = Columns.id)
     @PrimaryKey(autoGenerate = true)

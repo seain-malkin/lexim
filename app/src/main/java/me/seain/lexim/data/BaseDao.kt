@@ -4,11 +4,21 @@ import androidx.room.*
 import androidx.sqlite.db.SimpleSQLiteQuery
 import androidx.sqlite.db.SupportSQLiteQuery
 
+/**
+ * Common database operations.
+ */
 abstract class BaseDao<E: BaseEntity>(
     private val tableName: String
 ) {
+    /**
+     * Searches for a record with the given id.
+     * @param id Database record id
+     * @return Corresponding entity or null
+     */
     suspend fun findById(id: Long): E? {
-        return getOne(SimpleSQLiteQuery("SELECT * FROM $tableName WHERE id = $id"))
+        return getOne(SimpleSQLiteQuery(
+            "SELECT * FROM $tableName WHERE ${BaseEntity.Columns.id} = $id")
+        )
     }
 
     @Transaction

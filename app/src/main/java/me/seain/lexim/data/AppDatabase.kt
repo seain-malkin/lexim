@@ -26,6 +26,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     companion object {
         private var DATABASE_NAME = "Lexim_Data"
+
         @Volatile
         private var instance: AppDatabase? = null
 
