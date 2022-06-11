@@ -14,7 +14,7 @@ abstract class FunctionDao : BaseDao<Function>(Function.name) {
      * @param label Label to search for
      * @return Corresponding entity or null
      */
-    suspend fun findByLabel(label: String): Function? {
+    suspend fun findLabel(label: String): Function? {
         return getOne(SimpleSQLiteQuery(
             "SELECT * FROM ${Function.name} WHERE ${Function.Columns.label} = \"$label\"")
         )
