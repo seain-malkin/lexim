@@ -18,6 +18,11 @@ import androidx.room.PrimaryKey
             parentColumns = [Function.Columns.id],
             childColumns = [Entry.Columns.functionId],
         ),
+        ForeignKey(
+            entity = Pronunciation::class,
+            parentColumns = [Pronunciation.Columns.id],
+            childColumns = [Entry.Columns.pronunciationId],
+        ),
     ],
 )
 data class Entry(
@@ -27,6 +32,8 @@ data class Entry(
     val functionId: Long,
     @ColumnInfo(name = Columns.homograph)
     val homograph: Int = 0,
+    @ColumnInfo(name = Columns.pronunciationId)
+    val pronunciationId: Long? = null,
     @ColumnInfo(name = Columns.offensive)
     val offensive: Boolean = false,
 ) : BaseEntity() {
@@ -44,6 +51,7 @@ data class Entry(
             const val id = BaseEntity.Columns.id
             const val headwordId = Headword.foreignKey
             const val functionId = Function.foreignKey
+            const val pronunciationId = Pronunciation.foreignKey
             const val homograph = "homograph_number"
             const val offensive = "is_offensive"
         }
