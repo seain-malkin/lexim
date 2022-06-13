@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Lexim</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="word_title_placeholder">battle</string>
+    <string name="word_pron_placeholder">\\ˈba-tᵊl\</string>
 </resources>
