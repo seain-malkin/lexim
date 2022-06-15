@@ -18,5 +18,9 @@ class MainActivity : AppCompatActivity() {
                 replace(R.id.contentFrame, WordResultFragment.newInstance("test", "test"))
             }
         }
+
+        binding.fab.setOnClickListener {
+            // TODO: Add fab action
+        }
     }
 }
