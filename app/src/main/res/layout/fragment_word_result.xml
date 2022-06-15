@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
     tools:context=".fragment.WordResultFragment">
 
-    <RelativeLayout
-        android:id="@+id/resultLayout"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/headword"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/word_title_placeholder"
+        android:textAppearance="@style/TextAppearance.Lexi.DisplayMedium" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/headword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/word_title_placeholder"
-            android:textAppearance="@style/TextAppearance.Lexi.DisplayMedium" />
+    <ImageView
+        android:id="@+id/pronunciationAudio"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        style="@style/Widget.Lexim.Button.PlayButton"
+        android:src="@drawable/ic_round_play_circle_outline_32"
+        android:layout_below="@id/headword" />
 
-        <ImageView
-            android:id="@+id/pronunciationAudio"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            style="@style/Widget.Lexim.Button.PlayButton"
-            android:src="@drawable/ic_round_play_circle_outline_32"
-            android:layout_below="@id/headword" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/pronunciationWritten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headword"
+        android:layout_toEndOf="@id/pronunciationAudio"
+        android:paddingStart="4dp"
+        android:text="@string/word_pron_placeholder"
+        android:textAppearance="@style/TextAppearance.Lexi.TitleLarge" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/pronunciationWritten"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/headword"
-            android:layout_toEndOf="@id/pronunciationAudio"
-            android:paddingStart="4dp"
-            android:text="@string/word_pron_placeholder"
-            android:textAppearance="@style/TextAppearance.Lexi.TitleLarge" />
-
-    </RelativeLayout>
-
-</FrameLayout>
+</RelativeLayout>
