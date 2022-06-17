@@ -12,11 +12,11 @@ import me.seain.lexim.databinding.ActivityMainBinding
 import me.seain.lexim.fragment.WordResultFragment
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseSearchableActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
-        setSupportActionBar(binding.appbar)
+        setSupportActionBar(binding.activityTemplate.appbar)
         setContentView(binding.root)
         supportFragmentManager.let { fm ->
             fm.commit {
