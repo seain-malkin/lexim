@@ -18,11 +18,6 @@ class MainActivity : BaseSearchableActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setSupportActionBar(binding.activityTemplate.appbar)
         setContentView(binding.root)
-        supportFragmentManager.let { fm ->
-            fm.commit {
-                replace(R.id.contentFrame, WordResultFragment.newInstance("test", "test"))
-            }
-        }
 
         binding.fab.setOnClickListener {
             // TODO: Add fab action
