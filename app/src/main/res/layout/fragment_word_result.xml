@@ -1,37 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp"
+    android:orientation="vertical"
     tools:context=".fragment.WordResultFragment">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/headword"
+    <RelativeLayout
+        android:id="@+id/headwordLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/word_title_placeholder"
-        android:textAppearance="@style/TextAppearance.Lexi.DisplayMedium" />
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
 
-    <ImageView
-        android:id="@+id/pronunciationAudio"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        style="@style/Widget.Lexim.Button.PlayButton"
-        android:src="@drawable/ic_round_play_circle_outline_32"
-        android:layout_below="@id/headword" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/headword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/word_title_placeholder"
+            android:textAppearance="@style/TextAppearance.Lexi.DisplayMedium" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/pronunciationWritten"
+        <ImageView
+            android:id="@+id/pronunciationAudio"
+            style="@style/Widget.Lexim.Button.PlayButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/headword"
+            android:src="@drawable/ic_round_play_circle_outline_32" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pronunciationWritten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headword"
+            android:layout_toEndOf="@id/pronunciationAudio"
+            android:paddingStart="4dp"
+            android:text="@string/word_pron_placeholder"
+            android:textAppearance="@style/TextAppearance.Lexi.TitleLarge" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/functionLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/headword"
-        android:layout_toEndOf="@id/pronunciationAudio"
-        android:paddingStart="4dp"
-        android:text="@string/word_pron_placeholder"
-        android:textAppearance="@style/TextAppearance.Lexi.TitleLarge" />
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
 
-</RelativeLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/functionLabel"
+            style="@style/primaryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="noun"
+            android:textAppearance="@style/TextAppearance.Lexi.TitleLarge"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/attributeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="often attributive"
+            android:textAppearance="@style/TextAppearance.Lexi.LabelLarge"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/definitionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="12dp"
+        android:layout_marginTop="8dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/definition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="a general encounter between armies, ships of war, or aircraft."
+            android:textAppearance="@style/TextAppearance.Lexi.BodyLarge"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/usageExample"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="“the battle of Normandy”"
+            android:textAppearance="@style/TextAppearance.Lexi.BodyMedium"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/definitionLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="12dp"
+        android:layout_marginTop="8dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/definition2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="an extended contest, struggle, or controversy."
+            android:textAppearance="@style/TextAppearance.Lexi.BodyLarge"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/usageExample2"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="“a battle of wits”"
+            android:textAppearance="@style/TextAppearance.Lexi.BodyMedium"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

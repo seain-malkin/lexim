@@ -6,10 +6,21 @@
     <style name="TextAppearance.Lexi.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:textColor">?attr/colorOnBackground</item>
     </style>
+    <style name="TextAppearance.Lexi.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+    </style>
+    <style name="TextAppearance.Lexi.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+    </style>
+    <style name="TextAppearance.Lexi.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
     <style name="Widget.Lexim.Button.PlayButton" parent="Theme.LeximCombined">
         <item name="android:tint">?attr/colorTertiary</item>
     </style>
-
+    <style name="primaryText">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
     <style name="Theme.LeximCombined" parent="Theme.Lexim">
         <item name="android:windowBackground">?android:attr/colorBackground</item>
         <item name="textAppearanceDisplayMedium">@style/TextAppearance.Lexi.DisplayMedium</item>
